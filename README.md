@@ -40,16 +40,14 @@ NVIDIA_API_KEY="nvapi-..." bun run src/index.ts
 
 ## MCP Client Configuration
 
-### Claude Desktop
-
-Add to `claude_desktop_config.json`:
+### npx (remote from GitHub)
 
 ```json
 {
   "mcpServers": {
     "nvidia-vision": {
-      "command": "bun",
-      "args": ["run", "/path/to/nvidia-vision-mcp/src/index.ts"],
+      "command": "npx",
+      "args": ["-y", "AndrewGlez/nvidia-vision-mcp@latest", "src/index.ts"],
       "env": {
         "NVIDIA_API_KEY": "nvapi-..."
       }
@@ -58,9 +56,7 @@ Add to `claude_desktop_config.json`:
 }
 ```
 
-### Cursor / VS Code
-
-Add to `.cursor/mcp.json` or `.vscode/mcp.json`:
+### Local (development)
 
 ```json
 {
