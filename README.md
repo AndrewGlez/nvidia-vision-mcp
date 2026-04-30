@@ -12,7 +12,7 @@ Powered by [microsoft/phi-4-multimodal-instruct](https://build.nvidia.com/micros
 
 ## Requirements
 
-- [Bun](https://bun.sh/) runtime
+- Node.js + npm/npx
 - NVIDIA API key (free trial available)
 
 ## Quick Start
@@ -21,49 +21,20 @@ Powered by [microsoft/phi-4-multimodal-instruct](https://build.nvidia.com/micros
 
 Sign up at https://build.nvidia.com/ and grab a free API key.
 
-### 2. Install
+### 2. Run with npx from GitHub
 
 ```bash
-# Clone the repo
-git clone https://github.com/AndrewGlez/nvidia-vision-mcp.git
-cd nvidia-vision-mcp
-
-# Install dependencies
-bun install
-```
-
-### 3. Run
-
-```bash
-NVIDIA_API_KEY="nvapi-..." bun run src/index.ts
+NVIDIA_API_KEY="nvapi-..." npx -y github:AndrewGlez/nvidia-vision-mcp
 ```
 
 ## MCP Client Configuration
-
-### npx (remote from GitHub)
 
 ```json
 {
   "mcpServers": {
     "nvidia-vision": {
       "command": "npx",
-      "args": ["-y", "AndrewGlez/nvidia-vision-mcp@latest", "src/index.ts"],
-      "env": {
-        "NVIDIA_API_KEY": "nvapi-..."
-      }
-    }
-  }
-}
-```
-
-### Local (development)
-
-```json
-{
-  "mcpServers": {
-    "nvidia-vision": {
-      "command": "bun",
-      "args": ["run", "/path/to/nvidia-vision-mcp/src/index.ts"],
+      "args": ["-y", "github:AndrewGlez/nvidia-vision-mcp"],
       "env": {
         "NVIDIA_API_KEY": "nvapi-..."
       }
