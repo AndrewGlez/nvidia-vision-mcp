@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
+import { createRequire } from 'node:module';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+const require = createRequire(import.meta.url);
 const binDir = dirname(fileURLToPath(import.meta.url));
 const entry = resolve(binDir, '../src/index.ts');
+const tsxCli = require.resolve('tsx/cli');
 
-const child = spawn(process.execPath, ['--import', 'tsx/esm', entry], {
+const child = spawn(process.execPath, [tsxCli, entry], {
   stdio: 'inherit',
   env: process.env,
 });
