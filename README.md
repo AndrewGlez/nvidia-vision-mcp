@@ -146,18 +146,3 @@ bun run src/index.ts
 # Test with MCP protocol
 echo '{"jsonrpc":"2.0","id":0,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"1.0.0"}}}' | bun run src/index.ts
 ```
-
-## Tech Stack
-
-- [Bun](https://bun.sh/) — Runtime
-- [@modelcontextprotocol/sdk](https://github.com/modelcontextprotocol/typescript-sdk) — MCP implementation
-- [zod](https://zod.dev/) — Schema validation
-- [microsoft/phi-4-multimodal-instruct](https://build.nvidia.com/microsoft/phi-4-multimodal-instruct) — Vision model
-
-## License
-
-MIT
-
-## Author
-
-AndrewGlez
