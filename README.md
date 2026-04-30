@@ -21,17 +21,7 @@ Powered by [microsoft/phi-4-multimodal-instruct](https://build.nvidia.com/micros
 
 Sign up at https://build.nvidia.com/ and grab a free API key.
 
-### npx (without bun)
-
-```bash
-# Install Node.js dependencies
-npm install
-
-# Run with npx
-NVIDIA_API_KEY="nvapi-..." npx tsx src/index.ts
-```
-
-### bun
+### 2. Install
 
 ```bash
 # Clone the repo
@@ -54,37 +44,6 @@ NVIDIA_API_KEY="nvapi-..." bun run src/index.ts
 
 Add to `claude_desktop_config.json`:
 
-Using **npx**:
-```json
-{
-  "mcpServers": {
-    "nvidia-vision": {
-      "command": "npx",
-      "args": ["-y", "AndrewGlez/nvidia-vision-mcp@latest", "src/index.ts"],
-      "env": {
-        "NVIDIA_API_KEY": "nvapi-..."
-      }
-    }
-  }
-}
-```
-
-Using **bunx** (faster):
-```json
-{
-  "mcpServers": {
-    "nvidia-vision": {
-      "command": "bunx",
-      "args": ["AndrewGlez/nvidia-vision-mcp@latest", "src/index.ts"],
-      "env": {
-        "NVIDIA_API_KEY": "nvapi-..."
-      }
-    }
-  }
-}
-```
-
-Using **local path** (development):
 ```json
 {
   "mcpServers": {
@@ -103,13 +62,12 @@ Using **local path** (development):
 
 Add to `.cursor/mcp.json` or `.vscode/mcp.json`:
 
-Using **bunx**:
 ```json
 {
   "mcpServers": {
     "nvidia-vision": {
-      "command": "bunx",
-      "args": ["AndrewGlez/nvidia-vision-mcp@latest", "src/index.ts"],
+      "command": "bun",
+      "args": ["run", "/path/to/nvidia-vision-mcp/src/index.ts"],
       "env": {
         "NVIDIA_API_KEY": "nvapi-..."
       }
