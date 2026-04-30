@@ -1,0 +1,16 @@
+{
+  "name": "nvidia-vision-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for image description using NVIDIA NIM paligemma",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}
